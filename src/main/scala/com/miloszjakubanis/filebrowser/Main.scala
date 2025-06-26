@@ -5,7 +5,7 @@ import cats.effect.*
 object Main extends IOApp.Simple {
 
   val server = new Server()
-  
+
   val run: IO[Unit] = {
     val unusedVal = true
     val unsuedVal2 = "unused"
@@ -16,6 +16,9 @@ object Main extends IOApp.Simple {
     val unsuedVal7 = "unused" //Another 3 lines added
     val unsuedVal8 = "unused"
     val unsuedVal9 = "unused"
+    val unsuedVal10 = "unused"
+    val unsuedVal11 = "unused"
+    val unsuedVal12 = "unused"
     server.runServer[IO]
   }
 
