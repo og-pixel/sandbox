@@ -2,6 +2,9 @@ package com.miloszjakubanis.filebrowser
 
 import cats.effect.*
 
+
+class a(S: String)
+
 object Main extends IOApp.Simple {
 
   val server = new Server()
