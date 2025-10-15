@@ -51,4 +51,51 @@ class AmbiguousWarningTest {
   def redundantIf(flag: Boolean): String = {
     if (flag == true) "Flag is true" else "Flag is false"
   }
+
+  // Confusing type cast that is valid
+  def validTypeCast(x: Any): Option[String] = {
+    x match {
+      case s: String => Some(s)
+      case i: Int => Some(i.toString)
+      case _ => None
+    }
+  }
+
+  // Default argument that looks unused
+  def defaultArgTest(x: Int = 42): Int = x * 2
+
+  // For-comprehension with intentional side effect
+  def forComprehensionSideEffect(): Unit = {
+    for (i <- 1 to 3) println(i) // Looks like a suspicious side effect
+  }
+
+  // Nested function using outer variable (closure)
+  def closureTest(): Int = {
+    var sum = 0
+    def add(x: Int): Unit = { sum += x }
+    add(5)
+    sum
+  }
+
+  // Pattern match on sealed trait (exhaustive)
+  sealed trait Color
+  case object Red extends Color
+  case object Blue extends Color
+  case object Green extends Color
+
+  def matchColor(c: Color): String = c match {
+    case Red => "red"
+    case Blue => "blue"
+    case Green => "green"
+  }
+
+  // Try-finally with valid but odd finally
+  def tryFinallyOdd(): Unit = {
+    try {
+      println("Trying something")
+    } finally {
+      println("Finally block")
+      // Intentionally not cleaning up resources
+    }
+  }
 }
