@@ -19,6 +19,7 @@ object Main extends IOApp.Simple {
     val unsuedVal10 = "unused"
     val unsuedVal11 = "unused"
     val unsuedVal12 = "unused"
+    val unsuedVal13 = "unused"
     server.runServer[IO]
   }
 
